@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    
+    {% block defaulthead %}
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/dropzone.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/flatly.bootstrap.css') }}">
+    
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/single.css') }}">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+        
+    <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>    
+    <script src="{{ url_for('static', filename='js/underscore.min.js') }}" type="text/javascript" charset="utf-8"></script>    
+    <script src="{{ url_for('static', filename='js/backbone.min.js') }}" type="text/javascript" charset="utf-8"></script>    
+    <script src="{{ url_for('static', filename='js/single.js') }}" type="text/javascript" charset="utf-8"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}" type="text/javascript" charset="utf-8"></script>
+    <script src="{{ url_for('static', filename='js/dropzone.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/master.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/upload_manager.js') }}"></script>
+    
+    {% endblock %}
+    
+    {% block head %}
+      
+    {% endblock %}
+        <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+  </head>
+  
+  <body class="{% block bodyclass %}{% endblock %}">
+        
+         <div class="navbar navbar-single-page navbar-default-single-page">
+          <div class="container">
+            <div class="navbar-header">
+              <a class="navbar-brand-single-page" href="/"><img src="/static/img/logo_large_dark.png"/></a>          
+              <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-main">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact us</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>    
+        
+        
+        <div class="row">
+          <div class="container">
+                <div class="col-lg-6">
+                    <div class="container">                  
+                        <h1>{{meetup.name}}</h1> 
+                        <h4>{{meetup.city}}</h4>                  
+                    </div>
+                    
+                    <div class="container">
+                            
+                              {% if posts %}
+                                
+                              {% else %}
+                                <div class="alert alert-dismissable alert-danger col-lg-5 red-alert-box">
+                                  <button type="button" class="close" data-dismiss="alert">×</button>
+                                  <strong>Oh snap!</strong> It looks like noone uploaded any slides yet for this meetup. You could be the first one!
+                                </div>
+                              {% endif %}
+                              <div id="hidden_field_for_meetup_id">{{ meetup.id }}</div>
+                    </div>                   
+                    <div class="slides-container">
+                        {% include "_posts.html" %}
+                    </div>
+                </div>  
+                          
+                <div class="col-lg-6">                
+                    <ul class="nav nav-tabs" style="margin-bottom: 15px;">                        
+                      <li class="active"><a href="#home" data-toggle="tab">Upload files</a></li>
+                      <li class=""><a href="#link-slides" data-toggle="tab">Link slides</a></li>
+                      <li class=""><a href="#link-video" data-toggle="tab">Link video</a></li>                                  
+                    </ul>
+                    <div id="myTabContent" class="tab-content">
+                      <div class="tab-pane fade active in" id="home">
+                            <div id="dropzone">
+                                <form action="/file-upload"
+                                    class="dropzone"
+                                    id="my-awesome-dropzone">
+                                         <div id="final-upload-button" style="text-align:center">
+                                            <button type="submit" class="btn btn-lg btn-success">Upload Presentations</button> 
+                                         </div>              
+                                    </form>            
+                            </div>                
+                      </div>
+                      <div class="tab-pane fade" id="link-slides">                        
+                        {% include "_link_submitter.html" %}                                                
+                      </div>
+                      <div class="tab-pane fade" id="link-video">
+                        {% include "_video_submitter.html" %}
+                      </div>
+                    </div>                              
+                </div>                  
+          </div>        
+        </div>
+
+        
+  </body>
+</html>
+    

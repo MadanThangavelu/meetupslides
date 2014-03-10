@@ -14,12 +14,14 @@ class Meetup(models.Model):
 
 
 class Post(models.Model):
+    type = models.Attribute(required=False)
     title = models.Attribute(required=True)
     desc = models.Attribute(required=True)
     meetup_id = models.IntegerField(required=True)
     user_id = models.IntegerField(required=True)
     author = models.Attribute(required=True)
     slides = models.ListField(str)
+    post_type = models.Attribute(required=False)
     s3_filename = models.Attribute(required=False)
     post_date = models.DateField(required=False)
     status = models.BooleanField(default=True)

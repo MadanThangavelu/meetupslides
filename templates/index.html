@@ -45,7 +45,10 @@
         <div class="meetup-item">  
                <div class="single-card">          
                     <a href="/meetup/{{ meetup.id }}">
-                        <img class="meetup_logo_large" src="/static/img/avtars/{{ meetup.id | convert_to_image_id }}" height=150 width=197 />
+                        {# <img class="meetup_logo_large" src="/static/img/avtars/{{ meetup.id | convert_to_image_id }}" height=150 width=197 /> #}
+                        
+                        
+                        <img class="meetup_logo_large" src="/static/img/logos/{{ meetup.logo | convert_to_local_image }}" height=150 width=197 />
                         <div class="meetup-name-over-photo">                            
                             {{ meetup.name }}
                         </div>                                

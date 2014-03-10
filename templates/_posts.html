@@ -1,5 +1,8 @@
-<div class="slides-container">
-{% for post in posts %}
-  <div><img src="/static/img/slide.png" /><a href="/post/{{ post.id }}">{{ post.title }} - {{ post.author }}</a></div>
+{% for post in posts %}    
+  <blockquote>
+    <p><h3>{{ post.title }}<h3></p>
+    <p><h6>{{ post.desc }}</h6></p>        
+    <p><span class="metadata">by {{ post.author }} uploaded on {{ post.post_date }}</span> <div class="bs-component"><a href="{{ post.s3_filename }}" target="_blank"><span class="label label-success">Download</span></a></div></p>
+    <p>{{ post.post_type}}</p>    
+  </blockquote>
 {% endfor %}
-</div>

@@ -1,0 +1,99 @@
+
+.navbar-default{
+    background-color:#3686be;
+    border-color:#3686be;                
+}
+
+.navbar {
+    border-radius:0px;
+    margin-bottom:0px;
+    height:120px;
+}
+
+.main-home{
+    background-color:#3686be;
+    border-color:#3686be  
+}
+
+.navbar-brand{                
+    margin-top: 43px;
+}
+
+
+.jumbotron{
+  text-align:center;         
+  background-color:#3686be;
+}
+
+.jumbotron p, .jumbotron h1{
+   color:#fff;    
+}
+
+
+@media screen and (min-width: 768px) {
+  .jumbotron {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  .container .jumbotron {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  .jumbotron h1,
+  .jumbotron .h1 {
+    font-size: 54.5px;
+  }
+}
+
+/* single page */
+.navbar-single-page {
+  height: 75px;                     
+}
+
+.navbar-brand-single-page{
+    margin-top:0px;
+    float: left;
+    padding: 19.5px 15px;
+    font-size: 19px;
+    line-height: 21px;
+    height: 60px;    
+}
+
+
+#hidden_field_for_meetup_id{
+display:none;
+}
+
+.navbar-default-single-page {
+ background-color:#3a3f41;
+ border-color: #3a3f41;
+ color: #fff;                           
+}            
+
+
+.navbar-default-single-page a{
+  color: #fff;
+}                              
+                
+/* custom css */
+
+#main-promo{
+  margin-bottom:30px;
+}
+
+.red-alert-box{
+  margin-top:15px;
+}
+
+
+.metadata {
+  color: #b4bcc2;
+  font-size:80%;
+}
+
+.slides-container blockquote{
+    border-bottom-color: #18bc9c;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    padding-bottom: 20px;
+}

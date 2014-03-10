@@ -1,11 +1,12 @@
-### Meetupslides
-### https://github.com/teraom/meetupslides
+# ## Meetupslides
+# ## https://github.com/teraom/meetupslides
 import time
 import os
 import json
 import urlparse
 from datetime import datetime, date
 import random
+from flask import Response
 
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
 import redis
@@ -92,8 +93,19 @@ def get_s3_filename(bucket_name, key):
 
 @app.template_filter('convert_to_image_id')
 def image_filter(meetup_id):
-    return str(10000 + int(meetup_id)%70)[-4:] + ".jpg" # since there are around 70 images
+    return str(10000 + int(meetup_id) % 70)[-4:] + ".jpg"  # since there are around 70 images
 
+@app.template_filter('convert_to_local_image')
+def convert_to_local(meetup_logo):
+    
+    if meetup_logo:
+        try:
+            local_file = meetup_logo.split("/")[-1]                                                
+            return local_file
+        except Exception as e:
+            print e
+
+         
 
 def get_validated_date(d):
     try:
@@ -105,18 +117,39 @@ def get_validated_date(d):
 ################################
 ####### All router methods #####
 ################################
-
+'''
 @app.route('/')
 def index():
     posts = get_recent_posts()
     meetups = get_top_metups()
     return render_template('index.html', posts=posts, meetups=meetups)
+'''
+
+@app.route('/')
+def index():
+    return render_template('home.html')
+
+# @app.route('/meetups')
+# def meetups():
+#    meetups = get_meetups()    
+#    return render_template('meetups.html', meetups=meetups)
 
 
 @app.route('/meetups')
 def meetups():
-    meetups = get_meetups()    
-    return render_template('meetups.html', meetups=meetups)
+    meetups = get_meetups()
+    exposed_fields = ['id', 'website', 'city', 'name', 'slide_count', 'logo', 'homepage', 'desc']
+    
+    result = []
+    
+    for meetup in meetups:
+        m = {}
+        for exposed_field in exposed_fields:
+            m[exposed_field] = getattr(meetup, exposed_field)
+        result.append(m)
+    
+        
+    return Response(json.dumps(result), mimetype='application/json')
 
 
 @app.route('/meetup/add', methods=['GET', 'POST'])
@@ -152,7 +185,7 @@ def meetup_add():
 def meetup(meetup_id):
     meetup = get_meetup(meetup_id)
     posts = get_posts(meetup_id)
-    return render_template('meetup.html', meetup=meetup, posts=posts)
+    return render_template('new_meetup.html', meetup=meetup, posts=posts)
 
 
 @app.route('/add', methods=['GET', 'POST'])
@@ -287,7 +320,7 @@ def save_post(request):
     presentation_title = metadata["presentation_title"]
     presentation_description = metadata["presentation_description"]
     presentation_date = metadata["presentation_date"]
-    
+    post_type = metadata["post_type"]
     meetup_id = int(metadata["meetup_id"])
 
     title = presentation_title
@@ -310,7 +343,25 @@ def save_post(request):
     return p
 
 
-@app.route('/file-upload',  methods=['POST'])
+@app.route('/add_slide', methods=['POST'])
+def add_slide():            
+    user_id = request.form.get('user_id', 0) # Dummy 
+    
+    url = request.form.get('url', None)
+    speaker_name = request.form.get('speaker_name', None)
+    presentation_title = request.form.get('presentation_title', None)
+    presentation_description = request.form.get('presentation_description', None)
+    presentation_date = get_validated_date(request.form.get('presentation_date', None))
+    meetup_id = int(request.form.get('meetup_id', None))
+    post_type = request.form.get('post_type', None)
+    
+    p = Post(title=presentation_title, desc=presentation_description, user_id=user_id, meetup_id=meetup_id, author=speaker_name, post_date=presentation_date, post_type=post_type)
+    p.save()    
+    
+    return render_template('_posts.html', **{"posts": [p]})
+    
+    
+@app.route('/file-upload', methods=['POST'])
 def file_upload():        
     slides = request.files['file']
     if slides and allowed_file(slides.filename, ALLOWED_EXTENSIONS):
@@ -320,11 +371,12 @@ def file_upload():
         slides.save(filepath)
         ext = filename.rsplit('.', 1)[1]
         
-        post = save_post(request) # Save the post in redis after upload
+        post = save_post(request)  # Save the post in redis after upload
         s3_filename = upload_to_s3(filepath, BUCKET_NAME, post.id, ext, object_prefix='slide')
         
         # Save the s3 file location to the post
         post.s3_filename = s3_filename
+        post.type = "file"
         post.save() 
         
         os.remove(filepath)    
@@ -355,6 +407,11 @@ def file_upload():
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 0))
     
+    # Prefill meetups with a get or create
+    for meetup in DEFAULT_MEETUPS:
+        m = Meetup.objects.get_or_create(**meetup)
+        m.save()
+        
     if port:
         app.debug = False
         app.run(host='0.0.0.0', port=port)

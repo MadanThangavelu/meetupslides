@@ -52,7 +52,8 @@ MeetupSlides = {
                                                 "presentation_title": presentation_title, 
                                                 "presentation_description": presentation_description,
                                                 "presentation_date": presentation_date,
-                                                "meetup_id": meetup_id });                                                    
+                                                "meetup_id": meetup_id,
+                                                "post_type": "file" });                                                    
      }); 
      return formData;                                  
                                       
