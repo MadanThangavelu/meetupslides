@@ -63,32 +63,36 @@ MeetupSlides = {
 Dropzone.options.myAwesomeDropzone= {
   autoProcessQueue: false,
   addRemoveLinks: true,
-  
+  maxFiles: 1,
   previewTemplate: ['',
                 '<div class="dz-preview dz-file-preview">',
                    '<div class="dz-details">',
                       '<div class="dz-filename"><span data-dz-name></span></div>',
-                      '<div class="dz-size" data-dz-size></div>',
+                      
                       '<img data-dz-thumbnail />',
                    '</div>',
                    '<div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress></span></div>',
                    '<div class="dz-success-mark"><span>✔</span></div>',
                    '<div class="dz-error-mark"><span>✘</span></div>',
                    '<div class="dz-error-message"><span data-dz-errormessage></span></div>',                  
-                   '<div class="presentation-speaker-name presentation-details validate-speaker">',
-                       '<input class="form-control" id="focusedInput" type="text" value="Speaker Name">',
+                   '<div class="form-group presentation-speaker-name presentation-details validate-speaker">',
+                       '<label class="control-label" for="focusedInput">Speaker Name</label>',
+                       '<input class="form-control" id="focusedInput" type="text" placeholder="John Meyer">',
                    '</div>',
-                   '<div class="presentation-title validate-title presentation-details">',
-                       '<input class="form-control" id="focusedInput" type="text" value="Presentation title">',
+                   '<div class="form-group presentation-title validate-title presentation-details">',
+                       '<label class="control-label" for="focusedInput">Presentation Title</label>',
+                       '<input class="form-control" id="focusedInput" type="text" placeholder="Serving a web server with Golang">',
                    '</div>',                   
-                   '<div class="presentation-description validate-description presentation-details">',
-                       '<textarea class="form-control" rows="3" id="textArea">A brief description of the talk.</textarea>',
+                   '<div class="form-group presentation-description validate-description presentation-details">',
+                       '<label for="textArea" class="control-label">Description</label>',
+                       '<textarea class="form-control" rows="4" id="textArea" placeholder="Creating a web server is easy in golang. It provides native way or serving web requests as part of standard library. This talk will explain running a real production quality web server in golang."></textarea>',
                    '</div>',
-                   '<div class="presentation-date validate-date presentation-details">',
-                        '<input type="text" id="input02" class="form-control datepicker" name="post_date" value="Presentation date">',
+                   '<div class="form-group presentation-date validate-date presentation-details">',
+                        '<label class="control-label" for="focusedInput">Presentation date</label>',
+                        '<input type="text" id="input02" class="form-control datepicker" name="post_date" value="1/15/2014">',
                     '<div>',    
                 '</div>'].join('\n'),
-                                       
+                                                            
   init: function() {
     var myDropzone = this;
     
@@ -113,7 +117,12 @@ Dropzone.options.myAwesomeDropzone= {
       }
       
     });
-    
+
+    this.on("success", function(file, responseText) {
+      // Handle the responseText here. For example, add the text to the preview element:
+      SubmitLink.add_new_upload_to_list(responseText);  
+    });
+        
     this.on("complete", function() {
       if (this.getQueuedFiles().length == 0 && this.getUploadingFiles().length == 0) {
         // File finished uploading, and there aren't any left in the queue.
@@ -135,7 +144,7 @@ Dropzone.options.myAwesomeDropzone= {
         console.log("do something here and add additional fields");                                       
     });  
     
-    this.on("addedfile", function(file){            
+    this.on("addedfile", function(file){                                                            
         $(".datepicker").datepicker();                                    
     });                                                                        
   }

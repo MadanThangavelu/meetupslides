@@ -147,10 +147,21 @@ def meetups():
         for exposed_field in exposed_fields:
             m[exposed_field] = getattr(meetup, exposed_field)
         result.append(m)
-    
         
     return Response(json.dumps(result), mimetype='application/json')
 
+
+@app.route('/autocomplete/meetups', methods=['GET'])
+def autocomplete_meetups():
+    meetups = get_meetups()
+    
+    result = []
+    for meetup in meetups:
+        result.append({"id": meetup.id, "label":meetup.name, "value":meetup.name})
+    
+    return Response(json.dumps(result), mimetype='application/json')
+    
+    
 
 @app.route('/meetup/add', methods=['GET', 'POST'])
 def meetup_add():
@@ -184,7 +195,7 @@ def meetup_add():
 @app.route('/meetup/<meetup_id>')
 def meetup(meetup_id):
     meetup = get_meetup(meetup_id)
-    posts = get_posts(meetup_id)
+    posts = get_post_reverse(meetup_id)
     return render_template('new_meetup.html', meetup=meetup, posts=posts)
 
 
@@ -329,7 +340,7 @@ def save_post(request):
     user_id = request.form.get('user_id', 0)
     post_date = get_validated_date(presentation_date)
 
-    p = Post(title=title, desc=desc, user_id=user_id, meetup_id=meetup_id, author=author, post_date=post_date)
+    p = Post(title=title, desc=desc, user_id=user_id, meetup_id=meetup_id, author=author, post_date=post_date, post_type=post_type)
     p.save()
     post_id = p.id
     
@@ -380,9 +391,10 @@ def file_upload():
         post.save() 
         
         os.remove(filepath)    
+        
+        return render_template('_posts.html', **{"posts": [post]})
     else:
-        return jsonify(result=False)
-
+        return jsonify(result=False)    
     
     
     '''

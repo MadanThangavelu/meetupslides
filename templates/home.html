@@ -7,10 +7,13 @@
     {% block defaulthead %}
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/flatly.bootstrap.css') }}">
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/single.css') }}">
+    
     <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>   
     <script src="{{ url_for('static', filename='js/underscore.min.js') }}" type="text/javascript" charset="utf-8"></script>
     <script src="{{ url_for('static', filename='js/backbone.min.js') }}" type="text/javascript" charset="utf-8"></script>    
     <script src="{{ url_for('static', filename='js/single.js') }}" type="text/javascript" charset="utf-8"></script>
+    <script src="{{ url_for('static', filename='js/autocomplete.js') }}" type="text/javascript" charset="utf-8"></script>
             
     {% endblock %}
     
@@ -57,7 +60,7 @@
                   
                     <div class="col-lg-8 col-lg-offset-2">                                            
                           <div>                                                
-                            <input class="form-control" id="focusedInput" type="text" placeholder="Search for a meetup by name">                                                                            
+                            <input class="form-control" id="meetups_list" type="text" placeholder="Search for a meetup by name">                                                                            
                           </div>                      
                      </div> 
                 </div>            

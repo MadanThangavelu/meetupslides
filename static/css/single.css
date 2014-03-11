@@ -91,9 +91,34 @@ display:none;
   font-size:80%;
 }
 
+
 .slides-container blockquote{
     border-bottom-color: #18bc9c;
     border-bottom-width: 2px;
     border-bottom-style: solid;
     padding-bottom: 20px;
+}
+
+blockquote.new_item {
+   border-bottom-color: #f39c12;  
+   border-left-color: #f39c12;        
+}
+
+/* dropzone overrides */
+.dropzone .dz-preview, .dropzone-previews .dz-preview {
+    background: none;
+    display: block;
+    margin: 17px;
+    vertical-align: top;
+    border: none;
+    padding: none;
+}
+
+
+.dropzone .dz-preview .dz-details, .dropzone-previews .dz-preview .dz-details {
+    width: 100%;
+    height: auto;
+    position: relative;    
+    padding: 5px;
+    margin-bottom: 22px;
 }

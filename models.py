@@ -72,6 +72,10 @@ def get_posts(meetup_id):
 def get_post(post_id):
     return Post.objects.get_by_id(post_id)
 
+def get_post_reverse(meetup_id):
+    posts =  [p for p in Post.objects.filter(meetup_id=meetup_id)]
+    posts.reverse()
+    return posts
 
 def get_recent_posts(limit=10):
     return Post.objects.all().limit(limit).order("-post_date")

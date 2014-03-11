@@ -25,15 +25,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="379.55735"
-     inkscape:cy="-152.34807"
+     inkscape:zoom="0.7"
+     inkscape:cx="529.10074"
+     inkscape:cy="-257.12698"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1335"
      inkscape:window-height="743"
-     inkscape:window-x="74"
+     inkscape:window-x="59"
      inkscape:window-y="322"
      inkscape:window-maximized="0" />
   <metadata
@@ -67,12 +67,12 @@
        height="370"
        width="500" />
     <rect
-       style="fill:#dd4814;fill-opacity:1"
+       style="fill:#3185c0;fill-opacity:1"
        id="rect3007"
        width="1466.7416"
        height="1725.3405"
-       x="-225.25531"
-       y="228.07771" />
+       x="-446.8295"
+       y="398.01105" />
     <g
        id="g3805"
        transform="translate(-12.12183,0)">
@@ -134,58 +134,56 @@
            sodipodi:role="line">Meetup Slides</tspan></text>
     </g>
     <g
-       id="g3927"
-       inkscape:export-filename="/Users/mthangavelu/Documents/personal/development/meetupslides/static/img/logo.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       transform="matrix(0.67128578,0,0,0.67128578,160.736,394.82113)">
+       id="g3165"
+       transform="translate(-14.142136,-11.111678)">
       <rect
          transform="matrix(0.99997062,-0.00766522,0.01493593,0.99988845,0,0)"
-         y="1200.2867"
-         x="367.5871"
-         height="1.6569947"
-         width="19.863739"
+         y="1191.4099"
+         x="324.6214"
+         height="2.5872824"
+         width="31.015852"
          id="rect3822"
-         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1.07535672;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1.67909491;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
       <rect
          transform="matrix(0.99994275,-0.01070001,0.01070001,0.99994275,0,0)"
-         y="1202.6534"
-         x="375.13632"
-         height="8.0044327"
-         width="14.807348"
+         y="1194.9176"
+         x="334.15128"
+         height="11.810931"
+         width="21.848965"
          id="rect3824"
-         style="fill:none;stroke:#ffffff;stroke-width:1.74199998;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         style="fill:none;stroke:#ffffff;stroke-width:2.57040596;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
          inkscape:export-filename="/Users/mthangavelu/Documents/personal/development/meetupslides/static/img/logo.png"
          inkscape:export-xdpi="90"
          inkscape:export-ydpi="90" />
       <rect
          transform="matrix(0.99994275,-0.01070001,0.01070001,0.99994275,0,0)"
-         y="1206.8965"
-         x="379.26294"
-         height="0.48548684"
-         width="6.5540719"
+         y="1201.1785"
+         x="340.24033"
+         height="0.7163595"
+         width="9.6708536"
          id="rect3826"
-         style="fill:none;stroke:#ffffff;stroke-width:1.20151854;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+         style="fill:none;stroke:#ffffff;stroke-width:1.77289927;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
       <rect
          transform="matrix(0.99994275,-0.01070001,0.01070001,0.99994275,0,0)"
-         y="1211.5087"
-         x="381.69037"
-         height="3.5197794"
-         width="2.0633192"
+         y="1208.1816"
+         x="343.7515"
+         height="5.4958916"
+         width="3.22173"
          id="rect3828"
-         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1.20151854;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1.8760879;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
       <rect
          transform="matrix(0.99994275,-0.01070001,0.01070001,0.99994275,0,0)"
-         y="1215.3926"
-         x="376.59888"
-         height="0.12137171"
-         width="12.495186"
+         y="1213.7148"
+         x="336.30936"
+         height="0.17908987"
+         width="18.437256"
          id="rect3830"
-         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:2.26900005;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:3.34802032;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
       <path
+         sodipodi:nodetypes="sssssssssccccc"
          inkscape:connector-curvature="0"
          id="path3818"
-         d="m 369.15754,1181.5719 c -3.41151,0 -6.1562,2.793 -6.1562,6.2646 l 0,26.5421 c 0,3.4716 2.74469,6.2646 6.1562,6.2646 l 52.17356,0 c 3.41151,0 6.1562,-2.793 6.1562,-6.2646 l 0,-26.5421 c 0,-3.4716 -2.74469,-6.2646 -6.1562,-6.2646 l -52.17356,0 z m -3.4493,10.5184 59.07216,0 0,24.0472 -59.07216,0 0,-24.0472 z"
+         d="m 316.88329,1164.1754 c -5.32684,0 -9.61248,4.3611 -9.61248,9.7818 l 0,41.4436 c 0,5.4207 4.28564,9.7818 9.61248,9.7818 l 81.46539,0 c 5.32684,0 9.61248,-4.3611 9.61248,-9.7818 l 0,-41.4436 c 0,-5.4207 -4.28564,-9.7818 -9.61248,-9.7818 z m -4.67156,15.7095 90.80851,0 0.71429,38.2623 -92.23709,0 z"
          style="fill:#ffffff;fill-opacity:1" />
       <text
          inkscape:export-ydpi="90"
@@ -193,13 +191,13 @@
          inkscape:export-filename="/Users/mthangavelu/Documents/personal/development/meetupslides/static/img/logo.png"
          sodipodi:linespacing="125%"
          id="text3860"
-         y="1214.6489"
-         x="434.05389"
-         style="font-size:25.89707947px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         y="1215.8229"
+         x="418.21445"
+         style="font-size:40.43649673px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
          xml:space="preserve"><tspan
-           style="fill:#ffffff"
-           y="1214.6489"
-           x="434.05389"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;font-family:Cooper Black;-inkscape-font-specification:Cooper Black"
+           y="1215.8229"
+           x="418.21445"
            id="tspan3862"
            sodipodi:role="line">Meetup Slides</tspan></text>
     </g>
@@ -260,6 +258,367 @@
          d="m -542.97686,1410.0122 c -1.87687,0 -3.38689,1.6106 -3.38689,3.6125 l 0,15.3055 c 0,2.0019 1.51002,3.6126 3.38689,3.6126 l 28.70375,0 c 1.87688,0 3.38689,-1.6107 3.38689,-3.6126 l 0,-15.3055 c 0,-2.0019 -1.51001,-3.6125 -3.38689,-3.6125 l -28.70375,0 z m -1.89766,6.0655 32.49908,0 0,13.8669 -32.49908,0 0,-13.8669 z"
          id="path3022"
          inkscape:connector-curvature="0" />
+    </g>
+    <image
+       y="1047.2194"
+       x="294.42856"
+       id="image3136"
+       xlink:href="data:image/png;base64,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
+"
+       height="86"
+       width="414" />
+    <g
+       transform="matrix(0.67128578,0,0,0.67128578,-256.40686,293.39256)"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/Users/mthangavelu/Documents/personal/development/meetupslides/static/img/logo.png"
+       id="g3139">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1.07535672;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         id="rect3141"
+         width="19.863739"
+         height="1.6569947"
+         x="367.5871"
+         y="1200.2867"
+         transform="matrix(0.99997062,-0.00766522,0.01493593,0.99988845,0,0)" />
+      <rect
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/Users/mthangavelu/Documents/personal/development/meetupslides/static/img/logo.png"
+         style="fill:none;stroke:#ffffff;stroke-width:1.74199998;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         id="rect3143"
+         width="14.807348"
+         height="8.0044327"
+         x="375.13632"
+         y="1202.6534"
+         transform="matrix(0.99994275,-0.01070001,0.01070001,0.99994275,0,0)" />
+      <rect
+         style="fill:none;stroke:#ffffff;stroke-width:1.20151854;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         id="rect3145"
+         width="6.5540719"
+         height="0.48548684"
+         x="379.26294"
+         y="1206.8965"
+         transform="matrix(0.99994275,-0.01070001,0.01070001,0.99994275,0,0)" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1.20151854;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         id="rect3147"
+         width="2.0633192"
+         height="3.5197794"
+         x="381.69037"
+         y="1211.5087"
+         transform="matrix(0.99994275,-0.01070001,0.01070001,0.99994275,0,0)" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:2.26900005;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         id="rect3149"
+         width="12.495186"
+         height="0.12137171"
+         x="376.59888"
+         y="1215.3926"
+         transform="matrix(0.99994275,-0.01070001,0.01070001,0.99994275,0,0)" />
+      <path
+         style="fill:#ffffff;fill-opacity:1"
+         d="m 369.15754,1181.5719 c -3.41151,0 -6.1562,2.793 -6.1562,6.2646 l 0,26.5421 c 0,3.4716 2.74469,6.2646 6.1562,6.2646 l 52.17356,0 c 3.41151,0 6.1562,-2.793 6.1562,-6.2646 l 0,-26.5421 c 0,-3.4716 -2.74469,-6.2646 -6.1562,-6.2646 l -52.17356,0 z m -3.4493,10.5184 59.07216,0 0,24.0472 -59.07216,0 0,-24.0472 z"
+         id="path3151"
+         inkscape:connector-curvature="0" />
+      <text
+         xml:space="preserve"
+         style="font-size:25.89707947px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="434.05389"
+         y="1214.6489"
+         id="text3153"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/Users/mthangavelu/Documents/personal/development/meetupslides/static/img/logo.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90"><tspan
+           sodipodi:role="line"
+           id="tspan3155"
+           x="434.05389"
+           y="1214.6489"
+           style="fill:#ffffff">Meetup Slides</tspan></text>
+    </g>
+    <g
+       transform="matrix(0.51437422,0,0,0.51437422,254.98821,702.39539)"
+       id="g3221"
+       inkscape:export-filename="/Users/mthangavelu/Documents/personal/development/meetupslides/static/img/logo_large.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1.67909491;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         id="rect3223"
+         width="31.015852"
+         height="2.5872824"
+         x="324.6214"
+         y="1191.4099"
+         transform="matrix(0.99997062,-0.00766522,0.01493593,0.99988845,0,0)" />
+      <rect
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/Users/mthangavelu/Documents/personal/development/meetupslides/static/img/logo.png"
+         style="fill:none;stroke:#ffffff;stroke-width:2.57040596;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         id="rect3225"
+         width="21.848965"
+         height="11.810931"
+         x="334.15128"
+         y="1194.9176"
+         transform="matrix(0.99994275,-0.01070001,0.01070001,0.99994275,0,0)" />
+      <rect
+         style="fill:none;stroke:#ffffff;stroke-width:1.77289927;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         id="rect3227"
+         width="9.6708536"
+         height="0.7163595"
+         x="340.24033"
+         y="1201.1785"
+         transform="matrix(0.99994275,-0.01070001,0.01070001,0.99994275,0,0)" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1.8760879;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         id="rect3229"
+         width="3.22173"
+         height="5.4958916"
+         x="343.7515"
+         y="1208.1816"
+         transform="matrix(0.99994275,-0.01070001,0.01070001,0.99994275,0,0)" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:3.34802032;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         id="rect3231"
+         width="18.437256"
+         height="0.17908987"
+         x="336.30936"
+         y="1213.7148"
+         transform="matrix(0.99994275,-0.01070001,0.01070001,0.99994275,0,0)" />
+      <path
+         style="fill:#ffffff;fill-opacity:1"
+         d="m 316.88329,1164.1754 c -5.32684,0 -9.61248,4.3611 -9.61248,9.7818 l 0,41.4436 c 0,5.4207 4.28564,9.7818 9.61248,9.7818 l 81.46539,0 c 5.32684,0 9.61248,-4.3611 9.61248,-9.7818 l 0,-41.4436 c 0,-5.4207 -4.28564,-9.7818 -9.61248,-9.7818 z m -4.67156,15.7095 90.80851,0 -0.26763,40.7171 -90.27325,0 z"
+         id="path3233"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="sssssssssccccc" />
+      <text
+         xml:space="preserve"
+         style="font-size:40.43649673px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="418.21445"
+         y="1215.8229"
+         id="text3235"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/Users/mthangavelu/Documents/personal/development/meetupslides/static/img/logo.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90"><tspan
+           sodipodi:role="line"
+           id="tspan3237"
+           x="418.21445"
+           y="1215.8229"
+           style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;fill:#ffffff;font-family:Hiragino Kaku Gothic Std;-inkscape-font-specification:Hiragino Kaku Gothic Std Ultra-Bold">MeetupSlides</tspan></text>
+    </g>
+    <rect
+       style="fill:#3a3f41;fill-opacity:1;stroke:#ffffff;stroke-width:1.20000005000000010;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect3239"
+       width="856.60938"
+       height="860.64996"
+       x="989.94946"
+       y="862.45349" />
+    <g
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/Users/mthangavelu/Documents/personal/development/meetupslides/static/img/logo_large_dark.png"
+       id="g4009"
+       transform="matrix(0.51437422,0,0,0.51437422,897.84535,702.39539)">
+      <rect
+         transform="matrix(0.99997062,-0.00766522,0.01493593,0.99988845,0,0)"
+         y="1191.4099"
+         x="324.6214"
+         height="2.5872824"
+         width="31.015852"
+         id="rect4011"
+         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1.67909491;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <rect
+         transform="matrix(0.99994275,-0.01070001,0.01070001,0.99994275,0,0)"
+         y="1194.9176"
+         x="334.15128"
+         height="11.810931"
+         width="21.848965"
+         id="rect4013"
+         style="fill:none;stroke:#ffffff;stroke-width:2.57040596;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         inkscape:export-filename="/Users/mthangavelu/Documents/personal/development/meetupslides/static/img/logo.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <rect
+         transform="matrix(0.99994275,-0.01070001,0.01070001,0.99994275,0,0)"
+         y="1201.1785"
+         x="340.24033"
+         height="0.7163595"
+         width="9.6708536"
+         id="rect4015"
+         style="fill:none;stroke:#ffffff;stroke-width:1.77289927;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <rect
+         transform="matrix(0.99994275,-0.01070001,0.01070001,0.99994275,0,0)"
+         y="1208.1816"
+         x="343.7515"
+         height="5.4958916"
+         width="3.22173"
+         id="rect4017"
+         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1.8760879;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <rect
+         transform="matrix(0.99994275,-0.01070001,0.01070001,0.99994275,0,0)"
+         y="1213.7148"
+         x="336.30936"
+         height="0.17908987"
+         width="18.437256"
+         id="rect4019"
+         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:3.34802032;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         sodipodi:nodetypes="sssssssssccccc"
+         inkscape:connector-curvature="0"
+         id="path4021"
+         d="m 316.88329,1164.1754 c -5.32684,0 -9.61248,4.3611 -9.61248,9.7818 l 0,41.4436 c 0,5.4207 4.28564,9.7818 9.61248,9.7818 l 81.46539,0 c 5.32684,0 9.61248,-4.3611 9.61248,-9.7818 l 0,-41.4436 c 0,-5.4207 -4.28564,-9.7818 -9.61248,-9.7818 z m -4.67156,15.7095 90.80851,0 -0.26763,40.7171 -90.27325,0 z"
+         style="fill:#ffffff;fill-opacity:1" />
+      <text
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/Users/mthangavelu/Documents/personal/development/meetupslides/static/img/logo.png"
+         sodipodi:linespacing="125%"
+         id="text4023"
+         y="1215.8229"
+         x="418.21445"
+         style="font-size:40.43649673px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;fill:#ffffff;font-family:Hiragino Kaku Gothic Std;-inkscape-font-specification:Hiragino Kaku Gothic Std Ultra-Bold"
+           y="1215.8229"
+           x="418.21445"
+           id="tspan4025"
+           sodipodi:role="line">MeetupSlides</tspan></text>
     </g>
   </g>
 </svg>

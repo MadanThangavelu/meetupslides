@@ -39,7 +39,12 @@ SubmitLink = {
               
     add_new_upload_to_list: function(a){
       // Append this information to beginning of the list of blockquotes
-      $(a.replace(/^\s+|\s+$/g, '')).prependTo(".slides-container").slideDown("slow");
+      $(a.replace(/^\s+|\s+$/g, ''))
+      .hide()
+      .prependTo(".slides-container")
+      .slideDown('slow')
+      .animate({opacity: 1.0})
+      .addClass("new_item");
     }          
                 
 }

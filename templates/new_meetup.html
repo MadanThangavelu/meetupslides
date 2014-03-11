@@ -19,7 +19,8 @@
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}" type="text/javascript" charset="utf-8"></script>
     <script src="{{ url_for('static', filename='js/dropzone.js') }}"></script>
     <script src="{{ url_for('static', filename='js/master.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/upload_manager.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/upload_manager.js') }}"></script>    
+    
     
     {% endblock %}
     
@@ -55,9 +56,11 @@
         <div class="row">
           <div class="container">
                 <div class="col-lg-6">
-                    <div class="container">                  
+                    <div class="container"> 
+                      <div class="container col-lg-6">                 
                         <h1>{{meetup.name}}</h1> 
-                        <h4>{{meetup.city}}</h4>                  
+                        <h4>{{meetup.city}}</h4>
+                      </div>                  
                     </div>
                     
                     <div class="container">
