@@ -56,9 +56,8 @@ redis_url = os.environ.get('REDISTOGO_URL', None)
 if redis_url:
     redis_url = urlparse.urlparse(redis_url)
     redisco.connection_setup(host=redis_url.hostname, port=redis_url.port, db=0, password=redis_url.password)
-    
-    autocomplete_redis_client = redis.Redis(host=redis_url.hostname, port=redis_url.port, db=0, password=redis_url.password)
-    autocomplete_engine = RedisEngine(autocomplete_redis_client)
+        
+    autocomplete_engine = RedisEngine(host=redis_url.hostname, port=redis_url.port, db=0, password=redis_url.password)
 else:
     redisco.connection_setup(host='localhost', port=6379, db=0)
     
