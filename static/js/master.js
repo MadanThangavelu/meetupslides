@@ -24,7 +24,7 @@ var select_meetup = function(data) {
 
 SubmitLink = {
     save_and_update_ui: function(obj){                                            
-       console.log(obj["url"]);
+       console.log(obj["post_url"]);
        console.log(obj["speaker_name"]);
        console.log(obj["presentation_title"]);
        console.log(obj["description"]);
@@ -52,12 +52,12 @@ SubmitLink = {
 $(document).ready(function(){
     $(".datepicker").datepicker();  
     $("#slide_link_submit").click(function(){
-       var url = $("#slide_url").val();
+       var post_url = $("#slide_url").val();
        var speaker_name = $("#slide_author").val();
        var presentation_title = $("#slide_presentation_title").val();
        var presentation_description = $("#slide_description").val();        
        var presentation_date = $("#slide_presentation_date").val();
-       SubmitLink.save_and_update_ui({url:url, 
+       SubmitLink.save_and_update_ui({post_url:post_url, 
                                       speaker_name:speaker_name,
                                       presentation_title:presentation_title,
                                       presentation_description:presentation_description,
@@ -67,12 +67,12 @@ $(document).ready(function(){
     });
                              
     $("#video_link_submit").click(function(){
-       var url = $("#video_url").val();
+       var post_url = $("#video_url").val();
        var speaker_name = $("#video_author").val();
        var presentation_title = $("#video_presentation_title").val();
        var presentation_description = $("#video_description").val();        
        var presentation_date = $("#video_presentation_date").val();
-       SubmitLink.save_and_update_ui({url:url, 
+       SubmitLink.save_and_update_ui({post_url:post_url, 
                                       speaker_name:speaker_name,
                                       presentation_title:presentation_title,
                                       presentation_description:presentation_description,

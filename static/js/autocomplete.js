@@ -9,6 +9,7 @@ $(document).ready(function() {
                 location.href = '/meetup/' + meetup_id;
             }
         },
+                                                                
                                      
         // html: true, // optional (jquery.ui.autocomplete.html.js required)
  

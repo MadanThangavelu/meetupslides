@@ -212,3 +212,9 @@ h2.leading{
 }
 
 
+a:hover,
+a:focus {
+  color: #fff;
+  text-decoration: none;
+}
+

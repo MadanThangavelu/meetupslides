@@ -26,9 +26,13 @@ from boto.dynamodb2.table import Table
 
 from default_meetups import DEFAULT_MEETUPS
 
+from redis_completion import RedisEngine
+
+
 ################################
 ####### init and CONFIG ########
 ################################
+
 
 app = Flask(__name__)
 app.config.from_object('settings.Config')
@@ -52,8 +56,14 @@ redis_url = os.environ.get('REDISTOGO_URL', None)
 if redis_url:
     redis_url = urlparse.urlparse(redis_url)
     redisco.connection_setup(host=redis_url.hostname, port=redis_url.port, db=0, password=redis_url.password)
+    
+    autocomplete_redis_client = redis.Redis(host=redis_url.hostname, port=redis_url.port, db=0, password=redis_url.password)
+    autocomplete_engine = RedisEngine(autocomplete_redis_client)
 else:
     redisco.connection_setup(host='localhost', port=6379, db=0)
+    
+    autocomplete_redis_client = redis.Redis(host='localhost', port=6379, db=0)
+    autocomplete_engine = RedisEngine(autocomplete_redis_client)    
 
 ALLOWED_EXTENSIONS = set(('txt', 'pdf', 'ppt', 'pptx', 'zip', 'tar', 'rar'))
 ALLOWED_IMAGE_EXTENSIONS = set(('png', 'jpg'))
@@ -153,12 +163,16 @@ def meetups():
 
 @app.route('/autocomplete/meetups', methods=['GET'])
 def autocomplete_meetups():
-    meetups = get_meetups()
+    meetup_name = request.args.get('term', 'No Name')
+    meetups = autocomplete_engine.search(meetup_name)
     
     result = []
     for meetup in meetups:
-        result.append({"id": meetup.id, "label":meetup.name, "value":meetup.name})
+        d = json.loads(meetup)
+        result.append({"id": d["id"], "label":d["name"], "value":d["name"]})
     
+    if len(result) == 0:
+        result = [{"id": 0, "label":"No results. Please contact us to add your meetup!", "value":"No results. Please contact us to add your meetup!"}]
     return Response(json.dumps(result), mimetype='application/json')
     
     
@@ -174,6 +188,10 @@ def meetup_add():
     ajax = request.form.get('ajax', 0)
     m = Meetup(name=name, city=city, desc=desc, website=website)
     saved = m.save()
+    autocomplete_engine.store_json(m.id, m.name, {
+                                                  "name":m.name + " - " + m.city,
+                                                  "id":m.id
+                                                })        
     logo = request.files['logo']
     if logo and allowed_file(logo.filename, ALLOWED_IMAGE_EXTENSIONS):
         filename = secure_filename(logo.filename)
@@ -358,7 +376,7 @@ def save_post(request):
 def add_slide():            
     user_id = request.form.get('user_id', 0) # Dummy 
     
-    url = request.form.get('url', None)
+    post_url = request.form.get('post_url', None)
     speaker_name = request.form.get('speaker_name', None)
     presentation_title = request.form.get('presentation_title', None)
     presentation_description = request.form.get('presentation_description', None)
@@ -366,7 +384,7 @@ def add_slide():
     meetup_id = int(request.form.get('meetup_id', None))
     post_type = request.form.get('post_type', None)
     
-    p = Post(title=presentation_title, desc=presentation_description, user_id=user_id, meetup_id=meetup_id, author=speaker_name, post_date=presentation_date, post_type=post_type)
+    p = Post(title=presentation_title, desc=presentation_description, user_id=user_id, meetup_id=meetup_id, author=speaker_name, post_date=presentation_date, post_type=post_type, post_url=post_url)
     p.save()    
     
     return render_template('_posts.html', **{"posts": [p]})
@@ -420,9 +438,13 @@ if __name__ == '__main__':
     port = int(os.environ.get('PORT', 0))
     
     # Prefill meetups with a get or create
-    for meetup in DEFAULT_MEETUPS:
+    for meetup in DEFAULT_MEETUPS:        
         m = Meetup.objects.get_or_create(**meetup)
         m.save()
+        autocomplete_engine.store_json(m.id, m.name, {
+                                                      "name":m.name + " - " + m.city,
+                                                      "id":m.id
+                                                      })
         
     if port:
         app.debug = False

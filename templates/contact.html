@@ -4,35 +4,25 @@
 
 {% block content %}
 <h3>Contact</h3>
-<form class="bs-docs-example form-horizontal" method="POST">
-  <div class="control-group">
-    <label for="inputEmail" class="control-label">Name</label>
-    <div class="controls">
-      <input type="text" placeholder="Name" id="contact_name" name="name">
-    </div>
+<form class="" method="POST">
+  <div class="form-group">
+    <label for="inputEmail" class="control-label">Name</label>    
+    <input class="form-control" type="text" placeholder="Name" id="contact_name" name="John Meyer">    
   </div>
-  <div class="control-group">
-    <label for="inputEmail" class="control-label">Email</label>
-    <div class="controls">
-      <input type="text" placeholder="Email" id="contact_email" name="email">
-    </div>
+  <div class="form-group">
+    <label for="inputEmail" class="control-label">Email</label>    
+    <input class="form-control" type="text" placeholder="Email" id="contact_email" name="john.meyer@gmail.com">
   </div>
-  <div class="control-group">
-    <label for="inputEmail" class="control-label">Subject</label>
-    <div class="controls">
-      <input  class="input-xxlarge" type="text" placeholder="Subject" id="contact_subject" name="subject">
-    </div>
+  <div class="form-group">
+    <label for="inputEmail" class="control-label">Subject</label>    
+    <input  class="form-control input-xxlarge" type="text" placeholder="Subject" id="contact_subject" name="Add my meetup to your site">    
   </div>
-  <div class="control-group">
-    <label for="inputEmail" class="control-label">Message</label>
-    <div class="controls">
-      <textarea rows="8" class="input-xxlarge" name="content"></textarea>
-    </div>
+  <div class="form-group">
+    <label for="inputEmail" class="control-label">Message</label>    
+    <textarea rows="8" class="form-control input-xxlarge" name="content" placeholder="Hi, I would like to add my meetup to meetupslides.com. Please contact me at my email address for further details. The name of the meetup is MyMeetup.com and it is based out of San Francisco. - John Meyer"></textarea>
   </div>
-  <div class="control-group">
-    <div class="controls">
-      <button class="btn btn-primary btn-small" type="submit">Send</button>
-    </div>
+  <div class="form-group">    
+    <button class="btn btn-success" type="submit">Send</button>    
   </div>
 </form>
 {% endblock content %}

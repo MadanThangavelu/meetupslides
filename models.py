@@ -22,6 +22,7 @@ class Post(models.Model):
     author = models.Attribute(required=True)
     slides = models.ListField(str)
     post_type = models.Attribute(required=False)
+    post_url = models.Attribute(required=False)
     s3_filename = models.Attribute(required=False)
     post_date = models.DateField(required=False)
     status = models.BooleanField(default=True)
