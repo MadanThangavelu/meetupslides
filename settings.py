@@ -14,7 +14,7 @@ class Config(object):
     
     
     # Read from external config
-    #AWS_CONFIG = json.load(open("/etc/meetup_slides","r"))
+    # AWS_CONFIG = json.load(open("/etc/meetup_slides","r"))
     AWS_KEY = "AKIAI2SS7PB2BU74ZZHA" 
     AWS_SECRET_KEY = "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"
     
