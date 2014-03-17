@@ -8,7 +8,7 @@
            {% if post.post_type == "slide" %}
                 <a href="{{ post.post_url }}" target="_blank"><span class="label label-info">View slide</span></a>
            {% elif post.post_type == "video" %}
-                <a href="{{ post.post_url }}" target="_blank"><span class="label label-danger">View video</span></a>
+                <iframe width="560" height="315" src="{{ post.post_url }}" frameborder="0" allowfullscreen></iframe>
            {% elif post.post_type == "file" %}
                 <a href="{{ post.s3_filename }}" target="_blank"><span class="label label-success">Download file</span></a>
            {% endif %}
