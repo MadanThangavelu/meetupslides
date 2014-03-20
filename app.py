@@ -60,11 +60,9 @@ if redis_url:
     redisco.connection_setup(host=redis_url.hostname, port=redis_url.port, db=0, password=redis_url.password)
         
     autocomplete_engine = RedisEngine(host=redis_url.hostname, port=redis_url.port, db=0, password=redis_url.password)
-
-    redis_url = urlparse.urlparse(redis_url)
+    
     redisco.connection_setup(host=redis_url.hostname, port=redis_url.port, db=0, password=redis_url.password)
-    autocomplete_engine = RedisEngine(host=redis_url.hostname, port=redis_url.port, db=0, password=redis_url.password)
-       
+    autocomplete_engine = RedisEngine(host=redis_url.hostname, port=redis_url.port, db=0, password=redis_url.password)       
 else:
     redisco.connection_setup(host='localhost', port=6379, db=0)
     
