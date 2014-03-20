@@ -403,8 +403,7 @@ def add_slide():
 def file_upload():        
     try:
         post = upload_to_s3_test(request)
-        #return render_template('_posts.html', **{"posts": [post]})
-        return jsonify(result=True)    
+        return render_template('_posts.html', **{"posts": [post]})        
     except Exception as e:
         return jsonify(result=str(traceback.format_exc()))            
 
