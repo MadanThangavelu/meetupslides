@@ -403,27 +403,24 @@ def add_slide():
 def file_upload():        
     
     #if slides and allowed_file(slides.filename, ALLOWED_EXTENSIONS):
-    if True:
-        try:
-            slides = request.files['file']
-            filename = secure_filename(slides.filename)
-            # try:
-            filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-            slides.save(filepath)
-            ext = filename.rsplit('.', 1)[1]
+    if True:        
+        slides = request.files['file']
+        filename = secure_filename(slides.filename)
+        
+        filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        slides.save(filepath)
+        ext = filename.rsplit('.', 1)[1]
             
-            post = save_post(request)  # Save the post in redis after upload
-            s3_filename = upload_to_s3(filepath, BUCKET_NAME, post.id, ext, object_prefix='slide')
+        post = save_post(request)  # Save the post in redis after upload
+        s3_filename = upload_to_s3(filepath, BUCKET_NAME, post.id, ext, object_prefix='slide')
             
-            # Save the s3 file location to the post
-            post.s3_filename = s3_filename
-            post.type = "file"
-            post.save() 
+        # Save the s3 file location to the post
+        post.s3_filename = s3_filename
+        post.type = "file"
+        post.save() 
             
-            os.remove(filepath)               
-        except Exception as e:
-            traceback = traceback.format_exc()
-            return jsonify(result=str(traceback))    
+        os.remove(filepath)                                   
+            
         
         return render_template('_posts.html', **{"posts": [post]})
     else:
