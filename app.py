@@ -7,6 +7,7 @@ import urlparse
 from datetime import datetime, date
 import random
 from flask import Response
+import traceback
 
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
 import redis
@@ -402,21 +403,25 @@ def add_slide():
 def file_upload():        
     slides = request.files['file']
     if slides and allowed_file(slides.filename, ALLOWED_EXTENSIONS):
-        filename = secure_filename(slides.filename)
-        # try:
-        filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-        slides.save(filepath)
-        ext = filename.rsplit('.', 1)[1]
-        
-        post = save_post(request)  # Save the post in redis after upload
-        s3_filename = upload_to_s3(filepath, BUCKET_NAME, post.id, ext, object_prefix='slide')
-        
-        # Save the s3 file location to the post
-        post.s3_filename = s3_filename
-        post.type = "file"
-        post.save() 
-        
-        os.remove(filepath)    
+        try:
+            filename = secure_filename(slides.filename)
+            # try:
+            filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            slides.save(filepath)
+            ext = filename.rsplit('.', 1)[1]
+            
+            post = save_post(request)  # Save the post in redis after upload
+            s3_filename = upload_to_s3(filepath, BUCKET_NAME, post.id, ext, object_prefix='slide')
+            
+            # Save the s3 file location to the post
+            post.s3_filename = s3_filename
+            post.type = "file"
+            post.save() 
+            
+            os.remove(filepath)               
+        except Exception as e:
+            traceback = traceback.format_exc()
+            return jsonify(result=str(traceback))    
         
         return render_template('_posts.html', **{"posts": [post]})
     else:
