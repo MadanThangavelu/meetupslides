@@ -211,5 +211,10 @@ blockquote.new_item {
   padding-bottom:10px;
 }
 
+.post-title{
+ color: #2c3e50;
+ font-weight: bold;            
+}
+
 
 

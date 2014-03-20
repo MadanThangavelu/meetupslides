@@ -1,7 +1,7 @@
 {% for post in posts %}    
   <blockquote>
-    <p><h3>{{ post.title }}<h3></p>
-    <p><h6>{{ post.desc }}</h6></p>        
+    <h2 class="post-title">{{ post.title }}</h2>
+    <p>{{ post.desc }}</p>        
     <p>
     <span class="metadata">by {{ post.author }} uploaded on {{ post.post_date }}</span> 
         <div class="bs-component">
