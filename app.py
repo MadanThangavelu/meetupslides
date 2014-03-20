@@ -402,12 +402,12 @@ def add_slide():
 @app.route('/file-upload', methods=['POST'])
 def file_upload():        
     try:
-        post = upload_to_s3_test(request)
+        post = upload_to_s3_for_reals(request)
         return render_template('_posts.html', **{"posts": [post]})        
     except Exception as e:
         return jsonify(result=str(traceback.format_exc()))            
 
-def upload_to_s3_test(request):            
+def upload_to_s3_for_reals(request):            
     #if slides and allowed_file(slides.filename, ALLOWED_EXTENSIONS):
     if True:        
         slides = request.files['file']

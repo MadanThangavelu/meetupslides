@@ -1,4 +1,5 @@
 import json
+import os
 
 class Config(object):
     """Default config"""
@@ -15,13 +16,9 @@ class Config(object):
     
     # Read from external config
     #AWS_CONFIG = json.load(open("/etc/meetup_slides","r"))
-    AWS_KEY = "AKIAI2SS7PB2BU74ZZHA" 
-    AWS_SECRET_KEY = "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"
-    
-    
-    BUCKET_NAME = 'meetupslides_dev'
-    LOGOS_BUCKET_NAME = 'meetupslides_logos'
-    DYNAMO_DB = 'meetup_slides'
+    AWS_KEY = os.environ.get('AWS_KEY', None) 
+    AWS_SECRET_KEY = os.environ.get('AWS_SECRET_KEY', None)    
+    BUCKET_NAME = os.environ.get('BUCKET_NAME', None)                
     
     MAIL_DEBUG = False
     
