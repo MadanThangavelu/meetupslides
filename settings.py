@@ -18,7 +18,9 @@ class Config(object):
     #AWS_CONFIG = json.load(open("/etc/meetup_slides","r"))
     AWS_KEY = os.environ.get('AWS_KEY', None) 
     AWS_SECRET_KEY = os.environ.get('AWS_SECRET_KEY', None)    
-    BUCKET_NAME = os.environ.get('BUCKET_NAME', None)                
+    BUCKET_NAME = os.environ.get('BUCKET_NAME', None)        
+    LOGOS_BUCKET_NAME = os.environ.get('LOGOS_BUCKET_NAME', None)
+    DYNAMO_DB = 'meetup_slides'
     
     MAIL_DEBUG = False
     
