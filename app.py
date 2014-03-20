@@ -406,7 +406,7 @@ def file_upload():
         #return render_template('_posts.html', **{"posts": [post]})
         return jsonify(result=True)    
     except Exception as e:
-        return jsonify(result=False)            
+        return jsonify(result=str(traceback.format_exc()))            
 
 def upload_to_s3_test(request):            
     #if slides and allowed_file(slides.filename, ALLOWED_EXTENSIONS):
