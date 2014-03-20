@@ -401,9 +401,11 @@ def add_slide():
     
 @app.route('/file-upload', methods=['POST'])
 def file_upload():        
-    slides = request.files['file']
-    if slides and allowed_file(slides.filename, ALLOWED_EXTENSIONS):
+    
+    #if slides and allowed_file(slides.filename, ALLOWED_EXTENSIONS):
+    if True:
         try:
+            slides = request.files['file']
             filename = secure_filename(slides.filename)
             # try:
             filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
