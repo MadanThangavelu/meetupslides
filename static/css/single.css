@@ -193,9 +193,13 @@ blockquote.new_item {
 
 
 .nav > li > a:hover, .nav > li > a:focus {
-  text-decoration: none;
+  text-decoration: none;  
+}
+
+li.nav-links a:hover {
   background-color: #3a3f41;
 }
+
 
 .member_name{
   padding-left:10px;                            
