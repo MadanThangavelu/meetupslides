@@ -401,7 +401,14 @@ def add_slide():
     
 @app.route('/file-upload', methods=['POST'])
 def file_upload():        
-    
+    try:
+        post = upload_to_s3_test(request)
+        #return render_template('_posts.html', **{"posts": [post]})
+        return jsonify(result=True)    
+    except Exception as e:
+        return jsonify(result=False)            
+
+def upload_to_s3_test(request):            
     #if slides and allowed_file(slides.filename, ALLOWED_EXTENSIONS):
     if True:        
         slides = request.files['file']
@@ -422,9 +429,9 @@ def file_upload():
         os.remove(filepath)                                   
             
         
-        return render_template('_posts.html', **{"posts": [post]})
-    else:
-        return jsonify(result=False)    
+        return post
+    
+           
     
     
     '''
